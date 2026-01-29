@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>بين يديك - السيناريو التنفيذي المفصل (13 مشهد)</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --sos-blue: #3498db; --sos-green: #2ecc71; --sos-red: #e74c3c; 
+            --gold: #f1c40f; --dark-slate: #0a0f1d; --slate-800: #161e2e;
+            --pro-gray: #94a3b8;
+        }
+        body { background: var(--dark-slate); color: #e2e8f0; font-family: 'Cairo', sans-serif; margin: 0; padding: 20px; }
+        .master-container { max-width: 1000px; margin: 0 auto; position: relative; }
+        .roadmap-container { 
+            background: white; padding: 30px; border-radius: 15px; 
+            margin-bottom: 40px; text-align: center; overflow-x: auto;
+            border-bottom: 5px solid var(--sos-blue);
+        }
+        .mermaid { display: inline-block; min-width: 900px; }
+        .scene-card { 
+            background: var(--slate-800); border-radius: 15px; 
+            margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden;
+        }
+        .scene-header { 
+            background: rgba(0,0,0,0.3); padding: 15px 25px; 
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .scene-num { color: var(--sos-blue); font-weight: 900; font-size: 0.9rem; }
+        .scene-duration { background: var(--sos-red); padding: 3px 10px; border-radius: 5px; font-size: 0.75rem; font-weight: bold; }
+        .scene-body { padding: 30px; }
+        .scene-title { font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 10px; }
+        .action-box { 
+            background: rgba(0,0,0,0.2); padding: 20px; border-right: 4px solid var(--sos-blue); 
+            border-radius: 5px; margin-bottom: 25px; color: #cbd5e1; font-style: italic;
+        }
+        .branch-container { background: rgba(241,196,15,0.1); border: 1px solid var(--gold); border-radius: 10px; padding: 20px; margin-top: 20px; }
+        .branch-title { color: var(--gold); font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .branch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .branch-option { background: rgba(0,0,0,0.3); padding: 10px; border-radius: 5px; border-right: 3px solid var(--pro-gray); }
+        .branch-option.success { border-right-color: var(--sos-green); }
+        .branch-option.fail { border-right-color: var(--sos-red); }
+
+        /* --- فقاعة السيناريو العائمة --- */
+        .script-bubble {
+            position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px;
+            background: var(--sos-blue); border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4); z-index: 1000;
+            border: 2px solid #fff; transition: 0.3s ease;
+        }
+        .script-bubble:hover { transform: scale(1.1); background: var(--sos-green); }
+        .script-bubble i { font-style: normal; font-size: 1.5rem; }
+
+        /* --- النافذة المنبثقة (Modal) --- */
+        .modal {
+            display: none; position: fixed; z-index: 2000; left: 0; top: 0;
+            width: 100%; height: 100%; background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: var(--slate-800); margin: 5% auto; padding: 30px;
+            border: 1px solid var(--sos-blue); width: 80%; max-width: 800px;
+            border-radius: 15px; max-height: 80vh; overflow-y: auto;
+            position: relative; white-space: pre-wrap; line-height: 1.8;
+        }
+        .close-modal {
+            position: absolute; left: 20px; top: 15px; color: var(--sos-red);
+            font-size: 28px; font-weight: bold; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="script-bubble" onclick="openModal()">
+    <span>📜</span>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3 style="color:var(--sos-blue); border-bottom: 1px solid #333; padding-bottom:10px;">السيناريو النصي الكامل</h3>
+00:00 – 04:00
+
+المشهد 1 — المقبرة (افتتاح قوي)
+الإحساس: وجيعة، صمت، شد المشاهد
+• آدم قاعد على قبر أمه وأبوه، يحمل رسمة متقنة: دار + أم + أب + طفل
+• دموعه تسيل
+• Flashback سريع: الضوء في السيارة قبل الحادث
+آدم (يهمس):
+“ماما… بابا… شوفو… رسمّتكم كيما تحبو…”
+كسر الجدار الرابع:
+آدم (للكاميرا):
+“كان تنجم… ترجع دقيقة… شنوة تعمل؟”
+ تفاعل 1 (03:30 – 04:00)
+ نمشي معاهم للسيارة
+ نخليهم يمشيو وحدهم
+ القصة تمشي لنفس الفلاشباك
+ 04:00 – 08:00
+المشهد 2 — فلاشباك قبل الحادث
+الإحساس: دفء → توتر
+• داخل السيارة، الأم تضحك، الأب يبتسم
+الأم: “شد روحك يا آدم… الثنية خايبة”
+الأب: “توا نعدّيوها لباس ما تخافوش”
+آدم: “بابا… كي نكبر نحب نولي رسّام!”
+• لقطة الطريق… ضباب، صوت فرامل…
+⸻
+ 08:00 – 12:00
+المشهد 3 — الحادث (فلاشباك صادم)
+• ضوء قوي، صوت صدمة، لعبة آدم تقع، يد الأم تحاول تشدّه
+• Cut سريع للمقبرة: آدم يمسك رسمة
+آدم (للكاميرا):
+“ومن نهارها… ولّيت وحدي…”
+ 12:00 – 16:00
+المشهد 4 — المستشفى / القرار الاجتماعي
+الإحساس: ضياع → خوف
+• الأخصائية: “يلزمنا نلقاو حل باش تكون في أمان”
+• آدم: “وين باش نمشي؟”
+ تفاعل 2:
+ نسكت ونمشي
+ نسأل برشة أسئلة
+ في الآخر يمشي للمحكمة
+⸻
+ 16:00 – 20:00
+المشهد 5 — المحكمة (مع إضافة العم)
+الإحساس: ترقّب → تشويق قانوني
+• القاضي: “بعد دراسة الملف… سيتم تكفّل آدم في إطار الجمعية التونسية لقرى الأطفال SOS”
+القاضي (يكمل):
+“وبالنسبة للحلول العائلية… ثمّة فرصة إنو يعيش مع عمه…”
+ لقطة قصيرة (فلاش):
+• آدم في بيت العم
+• العم يعنّفو ويغضب عليه
+
+العم (بصراخ):
+“أنا ما نتحمّلوش! برا!”
+مرات العم (ترفض):
+“ما نقبلوش بيه معانا!”
+• آدم ساكت، خايف، يشد كراس الرسم
+• غضب وصراخ عليه
+ رجوع للمحكمة
+القاضي:
+“لكن بما أن البيئة العائلية غير آمنة… سيتم تكفّل آدم في إطار الجمعية التونسية لقرى الأطفال SOS.”
+آدم (للكاميرا):
+“يعني حياتي تبدّلت بكلمة؟”
+ 20:00 – 23:00
+المشهد 6 — الطريق للدار
+• الأخصائية: “موش ساهل… أما موش وحدك”
+• آدم شاد كراس الرسم
+• آدم: “كان ما حبّونيش؟”
+• الأخصائية: “باش يحبّوك… الكلنا معاك”
+
+ 23:00 – 28:00
+المشهد 7 — الدخول للدار (أم SOS سامية)
+
+الإحساس: تردّد → دفء
+• سامية: “مرحبا يا آدم… توا الدار هاذي دارك…”
+• الأطفال (4) يرحّبوا
+ تفاعل 3:
+ ينعزل
+ يحاول يندمج
+⸻
+ 28:00 – 33:00
+المشهد 8 — أول ليلة
+• آدم يفزع من كابوس
+• سامية تحضنه: “أنا هنا… ما تخافش”
+⸻
+ 33:00 – 36:00
+ المشهد 9 — التشويق القانوني / الملف الإداري
+الإحساس: واقع → ضغط
+• مكتب إداري، أوراق، كمبيوتر
+• أصوات إداريين (Off):
+صوت 1: “الموارد محدودة…”
+صوت 2: “31 ألف صغير في الليستة يستناو…”
+صوت 3: “الطلبات تكبر… والفلوس ما تكفيش”
+• Cut لآدم في الدار يرسم
+ 36:00 – 39:00
+ المشهد 10 — المدرسة + موهبة الرسم
+• المعلّمة تلاحظ موهبة آدم:
+المعلّمة: “عندك موهبة كبيرة… تحب تشارك في مسابقة الرسم؟”
+ تفاعل 4:
+ يشارك
+ ما يشاركش
+
+ 39:00 – 42:30
+
+المشهد 11 — سامية تشجّعو
+• آدم يحط رسمة على الطاولة ويذهب لغرفته
+• سامية تشوفها:
+سامية: “إنت رسّام شاطر… جرّب… الحياة برشة ألوان”
+كسر الجدار الرابع:
+آدم للكاميرا: “نشارك؟ ولا نخلّيها؟”
+ 42:30 – 43:10
+Hommage:
+• شاشة سوداء:
+نتراحموا على روح الأم سامية، اللي توفّات في حادث القطار
+ 43:10 – 44:10
+الضغط المالي الأخير
+• مكتب، آلة حاسبة، جدول مصاريف
+• صوت إداري:
+“كان ما نلقاوش دعم منتظم… الأطفال باش يقلّو فرصهم”
+⸻
+ 44:10 – 47:00
+المشهد 12 — يوم المسابقة/الفوز في الرسم
+• آدم يقدم اللوحة
+• المعلّمة تعلن: “آدم فايز!”
+• الحضن مع سامية
+ 47:00 – 49:00
+المشهد 13 — الرسمة تتحوّل + تفاعل رمزي
+• آدم يضيف أطفال آخرين في الرسمة: “بين يديك”
+ تفاعل 6:
+نزيد طفل أو نخليها كما هي
+• يظهر ورقة PAP + QR Code
+ تفاعل 7:
+نعبيها توا أو نبعثها للي ينجم
+آدم (آخر لقطة):
+“مستقبلي… بين يديك”
+    </div>
+</div>
+
+<div class="master-container">
+
+    <div class="roadmap-container">
+        <h3 style="color: #000; margin-bottom: 20px;">🗺️ خارطة تسلسل الأحداث (Script Flow)</h3>
+        <div class="mermaid">
+            graph LR
+                S1((المقبرة)) --> S2[فلاشباك الحادث]
+                S2 --> S4[المستشفى: القرار]
+                S4 -- "العم" --> S5[جحيم المنجي]
+                S4 -- "SOS" --> S7[دار سامية]
+                S5 -- "Rescue" --> S7
+                S7 --> S9[الضغط المالي]
+                S9 --> S10[الموهبة]
+                S10 --> S12[المسابقة]
+                S12 --> S13((النجاح))
+                
+                style S1 fill:#0a0f1d,color:#fff
+                style S4 fill:#f1c40f,color:#000
+                style S7 fill:#2ecc71,color:#000
+                style S5 fill:#e74c3c,color:#fff
+                style S13 fill:#2ecc71,color:#fff
+        </div>
+    </div>
+
+    <div class="scene-card">
+        <div class="scene-header"><span class="scene-num">SCENE 01 / EXT / DAY</span><span class="scene-duration">03:30</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">المقبرة: افتتاح الوجيعة</h2>
+            <div class="action-box">آدم يحفر التراب بيديه بجانب قبر والديه. يخرج رسمة "دار وعائلة".</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option"><b>أ:</b> يترك الرسمة فوق القبر ويرحل.</div>
+                    <div class="branch-option success"><b>ب:</b> يمسح التراب عن الرسمة ويخبئها.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card">
+        <div class="scene-header"><span class="scene-num">SCENE 02 / INT / CAR</span><span class="scene-duration">04:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">فلاشباك: دفء قبل العاصفة</h2>
+            <div class="action-box">داخل السيارة. الأم تبتسم لآدم في المرآة. الأب يقود بهدوء.</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option"><b>أ:</b> الأم تغني لآدم.</div>
+                    <div class="branch-option success"><b>ب:</b> آدم يري الأم رسمته الجديدة.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card" style="border-right: 5px solid var(--sos-red);">
+        <div class="scene-header"><span class="scene-num">SCENE 03 / EXT / NIGHT</span><span class="scene-duration">04:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">الحادث: انقطاع الضوء</h2>
+            <div class="action-box">ضوء عالي مفاجئ. صوت فرامل يمزق السكون. سقوط كراس الرسم.</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option fail"><b>أ:</b> التركيز على الحطام.</div>
+                    <div class="branch-option success"><b>ب:</b> التركيز على يد آدم وهي تفقد القلم.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card">
+        <div class="scene-header"><span class="scene-num">SCENE 04 / INT / HOSPITAL</span><span class="scene-duration">04:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">المستشفى: التيه</h2>
+            <div class="action-box">آدم جالس على كرسي المستشفى. الأخصائية ليلى تقترب بملف أزرق.</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option success"><b>مسار SOS:</b> الموافقة على دار الأطفال.</div>
+                    <div class="branch-option fail"><b>مسار العائلة:</b> الذهاب لبيت العم.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card" style="border-right: 5px solid var(--sos-red);">
+        <div class="scene-header"><span class="scene-num">SCENE 05 / INT / COURT</span><span class="scene-duration">04:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">المحكمة: خيبة الأمل</h2>
+            <div class="action-box">العم يرفض تحمل مسؤولية آدم. يرمي له "مفتاح عجلة" بسخرية.</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option fail"><b>أ:</b> آدم يبكي بحرقة.</div>
+                    <div class="branch-option success"><b>ب:</b> ليلى تتدخل لحمايته قانونياً.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card">
+        <div class="scene-header"><span class="scene-num">SCENE 06 / INT / CAR</span><span class="scene-duration">03:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">الطريق إلى SOS</h2>
+            <div class="action-box">آدم في السيارة مع ليلى. ينظر من النافذة للأشجار المارة.</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option"><b>أ:</b> صمت مطبق.</div>
+                    <div class="branch-option success"><b>ب:</b> ليلى تحكي له عن الأطفال في الدار.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card" style="border-right: 5px solid var(--sos-green);">
+        <div class="scene-header"><span class="scene-num">SCENE 07 / INT / SOS HOUSE</span><span class="scene-duration">05:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">اللقاء الأول: الأم سامية</h2>
+            <div class="action-box">آدم يدخل البيت. ريحة الخبز. سامية تفتح ذراعيها.</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option"><b>أ:</b> يختبئ خلف ليلى.</div>
+                    <div class="branch-option success"><b>ب:</b> يتقدم ببطء ويصافح سامية.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card">
+        <div class="scene-header"><span class="scene-num">SCENE 08 / INT / BEDROOM</span><span class="scene-duration">05:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">أول ليلة: نهاية الكوابيس</h2>
+            <div class="action-box">آدم يفزع من النوم. سامية بجانبه فوراً. تمسح على رأسه.</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option success"><b>أ:</b> قراءة قصة ما قبل النوم.</div>
+                    <div class="branch-option"><b>ب:</b> رسم لوحة صغيرة لتهدئة روعه.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card">
+        <div class="scene-header"><span class="scene-num">SCENE 09 / INT / OFFICE</span><span class="scene-duration">03:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">خلف الكواليس: التحدي المالي</h2>
+            <div class="action-box">أوراق ومصاريف. أصوات إداريين قلقين. "31 ألف صغير في الليستة".</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option success"><b>أ:</b> حملة تبرعات رقمية.</div>
+                    <div class="branch-option fail"><b>ب:</b> تقليص بعض النشاطات الفنية.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card">
+        <div class="scene-header"><span class="scene-num">SCENE 10 / INT / SCHOOL</span><span class="scene-duration">03:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">المدرسة: بريق الموهبة</h2>
+            <div class="action-box">المعلمة تكتشف لوحة آدم. تطلب منه المشاركة في المسابقة الوطنية.</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option success"><b>أ:</b> آدم يقبل التحدي.</div>
+                    <div class="branch-option"><b>ب:</b> آدم يتردد ويحتاج لتشجيع سامية.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card" style="border-bottom: 3px solid var(--gold);">
+        <div class="scene-header"><span class="scene-num">SCENE 11 / INT / SOS HOUSE</span><span class="scene-duration">04:10</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">تشجيع سامية الأخير</h2>
+            <div class="action-box">سامية تضع يدها على كتف آدم أمام لوحته. "الحياة برشة ألوان".</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option success"><b>أ:</b> سامية تعطيه ألواناً جديدة.</div>
+                    <div class="branch-option"><b>ب:</b> سامية تحكي له عن نجاحات أطفال سابقين.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card">
+        <div class="scene-header"><span class="scene-num">SCENE 12 / INT / STAGE</span><span class="scene-duration">02:50</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">يوم الفوز</h2>
+            <div class="action-box">آدم يقف على المسرح. يحمل الجائزة. يرفع لوحته "بين يديك".</div>
+            <div class="branch-container">
+                <span class="branch-title">🛤️ خيارات تفاعلية:</span>
+                <div class="branch-grid">
+                    <div class="branch-option success"><b>أ:</b> إلقاء كلمة مؤثرة.</div>
+                    <div class="branch-option"><b>ب:</b> النزول للمسرح لمعانقة ليلى والمدير.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scene-card" style="border: 2px solid var(--sos-green);">
+        <div class="scene-header"><span class="scene-num">SCENE 13 / FINAL</span><span class="scene-duration">02:00</span></div>
+        <div class="scene-body">
+            <h2 class="scene-title">بين يديك: النداء الأخير</h2>
+            <div class="action-box">آدم يضيف طفلاً جديداً للوحة. يلتفت للكاميرا.</div>
+            <div class="branch-container">
+                <span class="branch-title">🎯 القرار النهائي للمشاهد:</span>
+                <div class="branch-grid">
+                    <div class="branch-option success"><b>تبرع الآن:</b> كفالة طفل.</div>
+                    <div class="branch-option"><b>شارك القصة:</b> نشر الوعي.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    mermaid.initialize({ startOnLoad: true, theme: 'neutral', flowchart: { useMaxWidth: true, htmlLabels: true } });
+
+    var modal = document.getElementById("myModal");
+    function openModal() { modal.style.display = "block"; }
+    function closeModal() { modal.style.display = "none"; }
+    window.onclick = function(event) { if (event.target == modal) { closeModal(); } }
+</script>
+</body>
+</html>
